@@ -1,1 +1,52 @@
-
+Git and GitHub
+Part 1. Create a GitHub account and a project
+1. Go to https://github.com/ 
+2. Create a GitHub account if you do not have one.
+3. Create a public project/repository (iusb_c151) and add a text file (lab22.txt) with any 
+information inside.
+4. In your GitHub account, go to the project folder. Click “Code” and copy the Clone URL.
+Part 2. Use Git from Linux
+5. Use Putty to logon to cs01.cs.iusb.edu.
+6. Create a new folder Lab22 under C151 and switch into it.
+7. Set your account’s default identity by running the following git commands (for first time user 
+only). Replace blue text with your own information.
+$ git config --global user.email you@youremail.com
+$ git config --global user.name your_github_username
+$ git config -l
+8. To clone the GitHub repository, execute the following command (replace url with the one 
+you copied at Step 4):
+$ git clone url
+9. The project (iusb_c151) on GitHub is copied to your local repository.
+10. Switch into the local repository.
+$ cd iusb_c151
+11. Open File: Lab22.txt.
+12. Add a new line of text to the end of the file.
+13. Save the changes.
+14. Execute the following commands.
+$ git add -A (select the files for commit of changes)
+$ git commit -m “change a file” (the changes are made to the repository)
+$ git push (push the local changes to GitHub)
+15. Enter username and password if asked.
+16. If authentication fails, please do Steps 17-19. Otherwise go to Step 20.
+17. Create Access Token on GitHub.
+• Click on your GitHub profile icon on the top right corner.
+• Click Settings.
+• From the menu shown on the left, click Developer Settings.
+• Click Personal access tokens.
+• Click Generate new token.
+• Add a note that will help you identify the scope of the access token to be generated.
+• Choose the Expiration period from the drop down menu.
+• Finally, select the scopes you want to grant the corresponding access to the 
+generated access token. I will check all of them.
+• Finally click Generate Token.
+• Copy the token and save it on your desktop computer.
+18. On Linux, execute the following command to reset authentication method.
+$ git remote set-url origin https://<token>@github.com/<user>/<repository>.git
+In the above command make sure to replace:
+• <token> with the personal access token you have copied in the previous step
+• <user> with your GitHub username
+• <repository> with the name of your GitHub repository (iusb_c151)
+19. Execute the following command to push the change again.
+$ git push
+20. In your web browser, go to Github and check file Lab22.txt to see if it is updated.
+Submission: Screenshots of Lab22.txt on GitHub before and after the update.
